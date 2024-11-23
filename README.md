@@ -1,6 +1,6 @@
 # SDU-CV：山东大学 LaTeX 中文简历模板
 
-![示意图](./CV-preview.jpg)
+![示意图](./CV-preview.png)
 
 ## 简介
 
