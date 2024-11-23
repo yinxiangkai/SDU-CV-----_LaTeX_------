@@ -1,0 +1,141 @@
+\documentclass{sducv}
+% 定义新的命令
+
+% 背景
+\newcommand{\resumeHead}[1]{%
+    \begin{tikzpicture}[remember picture, overlay]
+        % 背景图
+        \node[anchor=north, inner sep=0pt](header) at (current page.north){%
+            \includegraphics[width=\paperwidth]{images/background_head.pdf}%
+        };
+        % 左侧图标
+        \node[anchor=west](school_logo) at (header.west){%
+            \hspace{0.5cm}%
+            \includegraphics[width=0.2\textwidth]{images/banner_white.pdf}%
+        };
+        % 右侧文字
+        \node[anchor=east](school_name) at (header.east){%
+            \textcolor{white}{\textbf{#1}}%
+            \hspace{0.5cm}%
+        };
+    \end{tikzpicture}
+    % 调整间距
+    \vspace{2em} % 在此处明确指定长度
+}
+
+\newcommand{\resumeBody}{
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[opacity=0.05] at(current page.center){
+            \includegraphics[width=0.7\paperwidth, keepaspectratio]{images/background_body.pdf}
+        };
+    \end{tikzpicture}
+}
+
+\newcommand{\resumefoot}[4]{
+       \begin{tikzpicture}[remember picture, overlay]
+        \node[anchor=south, inner sep=0pt](footer) at (current page.south){
+            \includegraphics[width=\paperwidth]{images/background_foot.pdf}
+        };
+        % 联系方式
+        \node[anchor=center] at(footer.center){
+        
+        \textcolor{white}{
+        % 邮箱
+        \faEnvelope \quad \href{mailto:#1}{#1}
+        \hspace{2em}
+        % 手机号
+        \faPhone \quad  #2
+        % 别的联系方式，如微信、GitHub等
+        \hspace{2em}
+        \faGithub \quad \href{mailto:https://github.com/#3}{ #3}
+        \hspace{2em}
+        \faBlog \quad \href{mailto:https://#4}{ #4}
+    }
+        };
+    \end{tikzpicture}
+}
+
+\begin{document} 
+% 页眉可以注释
+\resumeHead{网络空间安全学院 | School of Cyber Science and Technology   }
+
+\resumeBody
+\personalInfoWithPhoto{潮流美海}{男}{2001-04}{中共党员}{山东·青岛}{151-8888-8888}{youremail@mail.sdu.edu.cn}
+
+
+
+% 如果想插入照片，请取消此代码的注释。
+\begin{textblock*}{0cm}(17cm,2.3cm) % 图片的宽度和位置 (x, y)
+    \includegraphics[width=2cm]{images/avatar.png} % 插入图片
+\end{textblock*}
+
+\section{教育经历}
+
+\ResumeItem{山东大学}
+[\textnormal{网络空间安全学院，网络与信息安全专业|}  硕士研究生]
+[2023.09—2026.06]
+
+主要研究方向为\textbf{零知识证明}，具有CUDA、Ascend等工程经验。
+
+\ResumeItem{哈尔滨工程大学}
+[\textnormal{计算机科学与技术学院，信息安全专业|} 本科]
+[2019.09—2023.06]
+
+\textbf{Rank: 2/22(获得推免资格)}，获学业奖学金多次，优秀共青团员，优秀班干部
+
+\section{技术能力}
+\begin{itemize}
+  \item \textbf{语言}: 编程不受特定语言限制。常用 Rust, Golang, Python,C++； 熟悉 C, \GrayText{JavaScript}；了解 Lua, Java, \GrayText{TypeScript}。
+  \item \textbf{工作流}: Linux, Shell, (Neo)Vim, Git, GitHub, GitLab.
+  \item \textbf{其他}: 有容器化技术的实践经验，熟悉 Kubernetes 的使用。
+\end{itemize}
+
+\section{实习经历}
+
+\ResumeItem{北京 ABCD 有限公司}
+[后端开发实习生/XXXX]
+[2020.10—2021.03] 
+
+\begin{itemize}
+  \item \textbf{独立负责XXX业务后端的设计、开发、测试和部署。}通过 FaaS、Kafka 等平台实现站内信模板渲染服务。向上游提供 SDK 代码，增加或升级了多种离线和在线逻辑。完成了业务对站内信的多样需求。
+  \item \textbf{参与 XXX 的需求分析，系统技术方案设计；完成需求开发、灰度测试、上线和监控。}
+\end{itemize}
+
+\section{项目经历}
+
+\ResumeItem{论文}
+[ \textnormal{CCF-A}]
+[DAC|2025]
+\begin{itemize}
+  \item \textbf{介绍：}
+  \item \textbf{创新：}
+  \item \textbf{结果：}
+  \item \textbf{收获：}
+\end{itemize}
+
+\ResumeItem{项目}
+[ \textnormal{个人项目}]
+[2023-2024]
+\begin{itemize}
+  \item \textbf{介绍：}
+  \item \textbf{技术：}
+  \item \textbf{结果：}
+  \item \textbf{收获：}
+\end{itemize}
+
+
+
+\section{校园经历}
+\begin{itemize}
+\item 班级组织委员。
+\item 党支部委员，负责发展党员。
+\end{itemize}
+\section{个人总结}
+
+\begin{itemize}
+  \item 本人乐观开朗、在校成绩优异、自驱能力强，具有良好的沟通能力和团队合作精神。
+\end{itemize}
+
+\resumefoot{yourEmail@mail.sdu.edu.cn}{151-0000-0000}{github}{website}
+
+\end{document}
